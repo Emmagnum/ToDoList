@@ -7,24 +7,32 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   person = {
-    name: 'juan',
+    tasks: 'juan',
     age: '',
   }
 
   title = 'my-list-app';
-  names: string[] = [];
+  tasks: string[] = [];
   newName = '';
 
 
 
   addName() {
-    this.names.push(this.newName);
+    this.tasks.push(this.newName);
     this.newName = '';
   }
 
   deleteName(index: number){
-    this.names.splice(index, 1)
+    this.tasks.splice(index, 1)
   }
+
+
+
+
+  saveTask(){
+    localStorage.setItem('names', JSON.stringify(this.tasks))
+  }
+
 }
 
 

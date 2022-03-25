@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 
 @Component({
-  selector: 'app-ts',
-  templateUrl: './ts.component.html',
-  styleUrls: ['./ts.component.css']
+  selector: 'app-drag-drop',
+  templateUrl: './drag-drop.component.html',
+  styleUrls: ['./drag-drop.component.css']
 })
-export class TsComponent implements OnInit {
+export class DragDropComponent implements OnInit {
   todo = ['Get to work', 'Pick up groceries', 'Go home', 'Fall asleep'];
 
   done = ['Get up', 'Brush teeth', 'Take a shower', 'Check e-mail', 'Walk dog'];
@@ -28,18 +28,5 @@ export class TsComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  title = 'my-list-app';
-  names: string[] = [];
-  newName = '';
 
-
-  addName() {
-    this.names.push(this.newName);
-    this.newName = '';
-  }
-
-
-  deleteName(index: number){
-    this.names.splice(index, 1)
-  }
 }

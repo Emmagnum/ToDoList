@@ -1,0 +1,81 @@
+<div class="app-column">
+  <!-- PENDING -->
+  <div class="cont-body">
+    <div class="cont-todo-list">
+      <div class="c-header">
+        <button>To Do</button>
+      </div>
+      <div class="c-main">
+        <p>Tasks</p>
+        <ul cdkDropList style="height: 100%;"
+        #pendingList="cdkDropList"
+        [cdkDropListData]="pending"
+        [cdkDropListConnectedTo]="[inProcessList, doneList]"
+          class="list-group" (cdkDropListDropped)="drop($event)">
+          <li *ngFor="let name of pending; index as i" cdkDrag class="list-group-item">
+            <input type="checkbox" id="chk-item" checked>
+            <label for="chk-item">{{name}}</label>
+            <button (click)="deleteName(pending, i)">X</button>
+          </li>
+        </ul>
+      </div>
+      <div class="c-footer">
+        <input type="text" required [(ngModel)]="newName">
+        <button (click)="addName(pending)">Add new task</button>
+      </div>
+    </div>
+  </div>
+  <!-- IN PROCESS -->
+  <div class="cont-inProcess-body">
+    <div class="cont-inProcess-list">
+      <div class="c-inProcess-header">
+        <button>In Process</button>
+      </div>
+      <div class="c-main-inProcess">
+        <p>Tasks</p>
+        <ul cdkDropList style="height: 100%;"
+        #inProcessList="cdkDropList"
+        [cdkDropListData]="inProcess"
+        [cdkDropListConnectedTo]="[pendingList, doneList]"
+          class="inProcess-list-group" (cdkDropListDropped)="drop($event)">
+          <li *ngFor="let name of inProcess; index as i" cdkDrag class="inProcess-list-group-item">
+            <input type="checkbox" id="chk-item" checked>
+            <label for="chk-item">{{name}}</label>
+            <button (click)="deleteName(inProcess, i)">X</button>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="c-footer">
+        <input type="text" required [(ngModel)]="newName">
+        <button (click)="addName()">Add new task</button>
+      </div> -->
+    </div>
+  </div>
+
+  <!-- COMPLETE -->
+  <div class="cont-done-body">
+    <div class="cont-done-list">
+      <div class="c-done-header">
+        <button>Done!</button>
+      </div>
+      <div class="c-main-done">
+        <p>Tasks</p>
+        <ul cdkDropList style="height: 100%;"
+        #doneList="cdkDropList"
+        [cdkDropListData]="done"
+        [cdkDropListConnectedTo]="[pendingList, inProcessList]"
+          class="done-list-group" (cdkDropListDropped)="drop($event)">
+          <li *ngFor="let name of done; index as i" cdkDrag class="done-list-group-item">
+            <input type="checkbox" id="chk-item" checked>
+            <label for="chk-item">{{name}}</label>
+            <button (click)="deleteName(done, i)">X</button>
+          </li>
+        </ul>
+      </div>
+      <!-- <div class="c-footer">
+        <input type="text" required [(ngModel)]="newName">
+        <button (click)="addName()">Add new task</button>
+      </div> -->
+    </div>
+  </div>
+</div>

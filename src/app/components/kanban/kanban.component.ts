@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
-
-@Injectable({
-  providedIn: 'root'
+@Component({
+  selector: 'app-kanban',
+  templateUrl: './kanban.component.html',
+  styleUrls: ['./kanban.component.css']
 })
-export class TasksService {
+export class KanbanComponent implements OnInit {
   pending: string[] = [];
   inProcess: string[] = [];
   done: string[] = [];
-  tasks: any[] = [];
+
   newName: string = ''
 
   constructor() { }
@@ -16,7 +17,6 @@ export class TasksService {
   ngOnInit(): void {
   }
   names: string[] = [];
-
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -42,17 +42,4 @@ export class TasksService {
     array.splice(index, 1)
   }
 
-  keepTask() {
-    const localStorageData = localStorage.getItem('tasks');
-    if (localStorageData) {
-      this.tasks = JSON.parse(localStorageData);
-    }
-  }
-
-
-  saveTask(){
-    const parsedData = JSON.stringify(this.tasks);
-    console.log(parsedData);
-    localStorage.setItem('tasks', parsedData);
-  }
 }

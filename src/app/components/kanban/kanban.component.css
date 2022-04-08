@@ -1,0 +1,406 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.cont-body{
+  height: 115vh;
+  background: rgb(241, 241, 241);
+  background: rgba(255, 255, 255, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cont-todo-list {
+  width: 580px;
+  height: 720px;
+  background-color: rgb(49, 49, 49);
+  border-radius: 30px;
+  box-shadow: 22px 22px 42px -7px rgb(49, 49, 49);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px auto 55px;
+  row-gap: 10px;
+}
+.app-column{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+.c-header {
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 15px 25px;
+}
+.c-header button{
+  border: none;
+  background: none;
+  outline: inherit;
+  cursor: pointer;
+  background-color: rgb(160, 52, 52);
+  color: white;
+  border-radius: 20px;
+  height: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+.c-header button:hover{
+  background: rgb(255, 5, 5);
+  transition-duration: 0.5s;
+}
+
+.c-main {
+  height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(197, 197, 197);
+}
+.c-main::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgb(168, 168, 168);
+  border-radius: 5px;
+}
+.c-main::-webkit-scrollbar-thumb {
+  background-color: rgb(160, 52, 52);
+  border-radius: 5px;
+}
+.c-main p{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+.c-main .list-group{
+  margin: 0;
+  padding: 5px 10px;
+}
+.c-main .list-group .list-group-item {
+  list-style: none;
+  padding: 7px 10px;
+  color: white;
+  border: 1px solid rgb(42, 42, 42);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.c-main .list-group :hover {
+  border-color: rgb(160, 52, 52);
+  transition: 1s;
+}
+.list-group-item {
+  position: relative;
+}
+.list-group-item button{
+  border: none;
+  background: none;
+  outline: inherit;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  color: rgb(160, 52, 52);
+  border-radius: 50%;
+  font-size: 15px;
+}
+.list-group-item input[type=checkbox]{
+  display: none;
+}
+.list-group-item input[type=checkbox] + label{
+  cursor: pointer;
+  padding-left: 25px;
+  border: none;
+  position: relative;
+}
+.list-group-item label::before{
+  content: "";
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 25px;
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  margin-right: 5px;
+  position: absolute;
+  left: 0;
+}
+.list-group-item input[type=checkbox]:checked + label::before{
+  background-color: rgb(77, 199, 66);
+  padding-bottom: 0;
+}
+.c-footer{
+  border-radius: 20px;
+  display: grid;
+}
+.c-footer input{
+  border: 0;
+  outline: none;
+  background:none;
+  height: 30px;
+  font-size: 16px;
+  border-radius: 25px;
+  margin: 5px 10px;
+  border: 2px solid rgb(160, 52, 52);
+  padding-left: 15px;
+  color: white;
+}
+.c-footer button{
+  font-size: 16px;
+  color: white;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(160, 52, 52);
+}
+.c-footer button:hover{
+  background-color: rgb(141, 5, 5);
+  transition-duration: 0.5s;
+}
+
+.valid-input input{
+  border-color: rgb(255, 119, 119);
+}
+/*
+cdk animations (i think)
+*/
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.example-box:last-child {
+  border: none;
+}
+
+.example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+/* IN PROCESS */
+.c-main-inProcess{
+  height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(197, 197, 197);
+}
+.cont-inProcess-list {
+  width: 580px;
+  height: 720px;
+  background-color: rgb(49, 49, 49);
+  border-radius: 30px;
+  box-shadow: 22px 22px 42px -7px rgb(49, 49, 49);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px auto 55px;
+  row-gap: 10px;
+}
+.c-inProcess-header {
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 100px;
+  margin: 15px 25px;
+}
+.c-inProcess-header button{
+  border: none;
+  background: none;
+  outline: inherit;
+  cursor: pointer;
+  background-color: rgb(218, 198, 112);
+  color: white;
+  border-radius: 20px;
+  height: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+.c-inProcess-header button:hover{
+  background: rgb(255, 203, 58);
+  transition-duration: 0.5s;
+}
+.c-main-inProcess::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgb(168, 168, 168);
+  border-radius: 5px;
+}
+.c-main-inProcess::-webkit-scrollbar-thumb {
+  background-color: rgb(42, 42, 42);
+  border-radius: 5px;
+}
+.c-main-inProcess p{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+.c-main-inProcess .inProcess-list-group{
+  margin: 0;
+  padding: 5px 10px;
+}
+.c-main-inProcess .inProcess-list-group .inProcess-list-group-item {
+  list-style: none;
+  padding: 7px 10px;
+  color: white;
+  border: 1px solid rgb(42, 42, 42);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.c-main-inProcess .inProcess-list-group :hover {
+  border-color: rgb(255, 201, 53);
+  transition: 1s;
+}
+.inProcess-list-group-item {
+  position: relative;
+}
+.inProcess-list-group-item button{
+  border: none;
+  background: none;
+  outline: inherit;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  color: rgb(177, 154, 91);
+  border-radius: 50%;
+  font-size: 15px;
+}
+.inProcess-list-group-item input[type=checkbox]{
+  display: none;
+}
+.inProcess-list-group-item input[type=checkbox] + label{
+  cursor: pointer;
+  padding-left: 25px;
+  border: none;
+  position: relative;
+}
+.inProcess-list-group-item label::before{
+  content: "";
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 25px;
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  margin-right: 5px;
+  position: absolute;
+  left: 0;
+}
+.inProcess-list-group-item input[type=checkbox]:checked + label::before{
+  background-color: rgb(77, 199, 66);
+  padding-bottom: 0;
+}
+
+/* DONE LIST */
+
+.c-main-done{
+  height: 100%;
+  overflow-y: scroll;
+  background-color: rgb(197, 197, 197);
+}
+.cont-done-list {
+  width: 580px;
+  height: 720px;
+  background-color: rgb(49, 49, 49);
+  border-radius: 30px;
+  box-shadow: 22px 22px 42px -7px rgb(49, 49, 49);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px auto 55px;
+  row-gap: 10px;
+}
+.c-done-header {
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 100px;
+  margin: 15px 25px;
+}
+.c-done-header button{
+  border: none;
+  background: none;
+  outline: inherit;
+  cursor: pointer;
+  background-color: rgb(83, 221, 106);
+  color: white;
+  border-radius: 20px;
+  height: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
+}
+.c-done-header button:hover{
+  background: rgb(31, 233, 65);
+  transition-duration: 0.5s;
+}
+.c-main-done::-webkit-scrollbar {
+  width: 6px;
+  background-color: rgb(168, 168, 168);
+  border-radius: 5px;
+}
+.c-main-done::-webkit-scrollbar-thumb {
+  background-color: rgb(42, 42, 42);
+  border-radius: 5px;
+}
+.c-main-done p{
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+}
+.c-main-done .done-list-group{
+  margin: 0;
+  padding: 5px 10px;
+}
+.c-main-done .done-list-group .done-list-group-item {
+  list-style: none;
+  padding: 7px 10px;
+  color: white;
+  border: 1px solid rgb(42, 42, 42);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.c-main-done .done-list-group :hover {
+  border-color: rgb(255, 201, 53);
+  transition: 1s;
+}
+.done-list-group-item {
+  position: relative;
+}
+.done-list-group-item button{
+  border: none;
+  background: none;
+  outline: inherit;
+  cursor: pointer;
+  position: absolute;
+  right: 5px;
+  top: 8px;
+  color: rgb(177, 154, 91);
+  border-radius: 50%;
+  font-size: 15px;
+}
+.done-list-group-item input[type=checkbox]{
+  display: none;
+}
+.done-list-group-item input[type=checkbox] + label{
+  cursor: pointer;
+  padding-left: 25px;
+  border: none;
+  position: relative;
+}
+.done-list-group-item label::before{
+  content: "";
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 25px;
+  display: inline-block;
+  height: 17px;
+  width: 17px;
+  margin-right: 5px;
+  position: absolute;
+  left: 0;
+}
+.done-list-group-item input[type=checkbox]:checked + label::before{
+  background-color: rgb(77, 199, 66);
+  padding-bottom: 0;
+}

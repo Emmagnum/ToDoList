@@ -58,7 +58,7 @@ body {
   border-radius: 5px;
 }
 .c-main::-webkit-scrollbar-thumb {
-  background-color: rgb(160, 52, 52);
+  background-color: rgb(42, 42, 42);
   border-radius: 5px;
 }
 .c-main p{
@@ -95,7 +95,7 @@ body {
   position: absolute;
   right: 5px;
   top: 8px;
-  color: rgb(160, 52, 52);
+  color: rgb(255, 0, 0);
   border-radius: 50%;
   font-size: 15px;
 }
@@ -263,7 +263,7 @@ cdk animations (i think)
   position: absolute;
   right: 5px;
   top: 8px;
-  color: rgb(177, 154, 91);
+  color: rgb(255, 0, 0);
   border-radius: 50%;
   font-size: 15px;
 }
@@ -362,7 +362,7 @@ cdk animations (i think)
   cursor: pointer;
 }
 .c-main-done .done-list-group :hover {
-  border-color: rgb(255, 201, 53);
+  border-color: rgb(22, 241, 70);
   transition: 1s;
 }
 .done-list-group-item {
@@ -376,7 +376,7 @@ cdk animations (i think)
   position: absolute;
   right: 5px;
   top: 8px;
-  color: rgb(177, 154, 91);
+  color: rgb(255, 0, 0);
   border-radius: 50%;
   font-size: 15px;
 }

@@ -29,6 +29,7 @@ export class TasksService {
         event.currentIndex,
       );
     }
+    this.saveTask();
   }
 
   addName(array: any[]) {
@@ -36,10 +37,12 @@ export class TasksService {
       array.push(this.newName);
       this.newName = '';
     }
+    this.saveTask();
   }
 
   deleteName(array: any[], index: number) {
     array.splice(index, 1)
+    this.saveTask();
   }
 
   keepTask() {
@@ -51,7 +54,7 @@ export class TasksService {
 
 
   saveTask(){
-    const parsedData = JSON.stringify(this.tasks);
+    const parsedData = JSON.stringify({pending: this.pending, inProcess: this.inProcess, done: this.done});
     console.log(parsedData);
     localStorage.setItem('tasks', parsedData);
   }

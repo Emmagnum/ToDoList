@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "elkanbandemanu": {
+      "hosting": {
+        "my-list-app": [
+          "elkanbandemanu"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "elkanbandemanu"
+  }
+}

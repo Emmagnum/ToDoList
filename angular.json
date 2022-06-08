@@ -99,6 +99,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "my-list-app:build:production",
+            "firebaseProject": "elkanbandemanu",
+            "firebaseHostingSite": "elkanbandemanu"
+          }
         }
       }
     }

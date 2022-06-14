@@ -15,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DragDropComponent } from './components/drag-drop/drag-drop.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { KanbanComponent } from './components/kanban/kanban.component';
+import { DatabaseComponent } from './components/database/database.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { KanbanComponent } from './components/kanban/kanban.component';
     FooterComponent,
     DragDropComponent,
     KanbanComponent,
+    DatabaseComponent,
   ],
   imports: [
     BrowserModule,

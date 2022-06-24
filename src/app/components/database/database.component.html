@@ -1,5 +1,8 @@
 <ul>
-  <li *ngFor="let item of items | async">
-    {{ item.name }}
+  <form action="form">post something</form>
+  <li class="database" *ngFor="let item of items | async">
+   Title: {{ item.title }}
+   <div class="itemContent">{{item.content}}</div>
+   <div class="itemAuthor">Author: {{item.author}}</div>
   </li>
 </ul>

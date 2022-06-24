@@ -1,0 +1,20 @@
+.database{
+  width: 400px;
+  height: 100px;
+  background-color: burlywood;
+  color: black;
+  font-size: 16px;
+  margin-top: 20px;
+  font-family: cursive;
+  border-radius: 15px;
+  display: grid;
+}
+.itemContent{
+  margin-top: 7px;
+  background-color: rgb(201, 173, 136);
+  border-radius: 5px;
+  height: 40px;
+}
+.itemAuthor{
+  margin-top: 7px;
+}

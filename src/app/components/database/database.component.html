@@ -1,7 +1,13 @@
 <ul>
-  <form action="form">post something</form>
+  <form class="box" action="index.html" method="post">
+    <h1>New Post</h1>
+    <input type="text" name="" placeholder="Post´s title">
+    <input type="text" name="" placeholder="Write your post">
+    <input type="text" name="" placeholder="Author´s name">
+    <input type="submit" name="" value="submit">
+  </form>
   <li class="database" *ngFor="let item of items | async">
-   Title: {{ item.title }}
+    {{ item.title }}
    <div class="itemContent">{{item.content}}</div>
    <div class="itemAuthor">Author: {{item.author}}</div>
   </li>

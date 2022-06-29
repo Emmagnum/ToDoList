@@ -4,6 +4,8 @@ import { Observable } from 'rxjs'
 
 export interface Item { title: string; author: string; content: string }
 
+
+
 @Component({
   selector: 'app-database',
   templateUrl: './database.component.html',
@@ -20,7 +22,15 @@ export class DatabaseComponent implements OnInit {
   addItems(item: Item){
     this.itemsCollection.add(item);
   }
+
+  itemsObservable!: Observable<Item[]>;
+
   ngOnInit(): void {
+    // Step 1: Make a reference
+  this.itemsCollection = this.afs.collection('Item');
+
+ // Step 2: Get an observable of the data
+  this.itemsObservable = this.itemsCollection.valueChanges();
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
+import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { type } from 'os';
 import { Observable } from 'rxjs'
 
 export interface Item { title: string; author: string; content: string }
@@ -18,11 +19,13 @@ export class DatabaseComponent implements OnInit {
   constructor(private afs: AngularFirestore) {
     this.itemsCollection = afs.collection<Item>('posts');
     this.items = this.itemsCollection.valueChanges();
+
   }
   addItems(item: Item){
     this.itemsCollection.add(item);
   }
 
+  itemDocument!: AngularFirestoreDocument<Item>;
   itemsObservable!: Observable<Item[]>;
 
   ngOnInit(): void {
@@ -32,5 +35,6 @@ export class DatabaseComponent implements OnInit {
  // Step 2: Get an observable of the data
   this.itemsObservable = this.itemsCollection.valueChanges();
   }
+
 
 }

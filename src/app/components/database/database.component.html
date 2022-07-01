@@ -13,13 +13,19 @@
     <input type="text" name="" placeholder="Post´s title">
     <input type="text" name="" placeholder="Write your post">
     <input type="text" name="" placeholder="Author´s name">
-    <input type="submit" name="" value="submit">
+    <input type="submit" name="" value="submit" >
   </form>
-  <li class="database" *ngFor="let item of items | async">
+  <li class="database" *ngFor="let item of items | async as Item">
     {{ item.title }}
    <div class="itemContent">{{item.content}}</div>
    <div class="itemAuthor">Author: {{item.author}}</div>
   </li>
+  <ul>
+     <li *ngFor="let book of itemsObservable | async as Item">
+     {{ book.title }} by {{ book.author }}
+     </li>
+  </ul>
+
 </ul>
 </body>
 </html>
